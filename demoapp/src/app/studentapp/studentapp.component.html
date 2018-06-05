@@ -1,0 +1,89 @@
+<h1 align="center">Student Details</h1>
+<br>
+<br>
+<div class="container">
+  <table class="table" border="5" style="border:blue;">
+    <tr>
+      <td>RNO</td>
+      <td>
+        <input [(ngModel)]="rno" type="number">
+      </td>
+      <br>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>
+        <input [(ngModel)]="name" type="text">
+      </td>
+      <br>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+        <input [(ngModel)]="gender" type="radio" name="r1" value="Male">Male
+        <br>
+        <input [(ngModel)]="gender" type="radio" name="r1" value="Female">Female </td>
+    </tr>
+    <tr>
+      <td>Mobile no</td>
+      <td>
+        <input [(ngModel)]="mno" type="text">
+      </td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td>
+        <select [(ngModel)]="city1">
+          <option *ngFor="let item of city">{{item}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Active</td>
+      <td>
+        <input [(ngModel)]="active" type="radio" name="r11" value="Yes">Yes
+        <br>
+        <input [(ngModel)]="active" type="radio" name="r11" value="No">NO
+      </td>
+
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button (click)="onadd()"> add</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div>
+  <table class="table">
+    <thead>
+      <th>Rno</th>
+      <th>Name</th>
+      <th>gender</th>
+      <th>Mobile no</th>
+      <th>City</th>
+      <th>Active</th>
+    </thead>
+    <tr *ngFor="let item of arr">
+      <td>{{item.rno}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.mno}}</td>
+      <td>{{item.city}}</td>
+      <td>{{item.active}}</td>
+      <button (click)="onDelete(item)" type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-trash" >
+
+          </span>
+        </button>
+        |
+        <button (click)="onEdit(item)" type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-pencil" >
+
+            </span>
+        </button>
+    </tr>
+  </table>
+
+</div>

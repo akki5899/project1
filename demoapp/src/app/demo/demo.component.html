@@ -1,0 +1,35 @@
+<input [value]="x" type="number">
+<table>
+  <tr>
+    <td>
+      <button class="s" (click)="onclick(1)">1</button>
+      <button (click)="onclick(2)">2</button>
+      <button (click)="onclick(3)">3</button>
+      <button (click)="onadd()">+</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="onclick(4)">4</button>
+      <button (click)="onclick(5)">5</button>
+      <button (click)="onclick(6)">6</button>
+      <button (click)="onmin()">-</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="onclick(7)">7</button>
+      <button (click)="onclick(8)">8</button>
+      <button (click)="onclick(9)">9</button>
+      <button (click)="onmul()">*</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="once()">CE</button>
+      <button (click)="onclick(0)">0</button>
+      <button (click)="oneq()">=</button>
+      <button (click)="ondiv()">/</button>
+    </td>
+  </tr>
+</table>

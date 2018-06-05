@@ -1,0 +1,64 @@
+<h1 align="center">Employee Details:-</h1>
+<div class="container">
+<table class="table">
+<tr>
+  <td><label >Employee ID</label></td>
+ <td> <input [(ngModel)]="eid" class="form-control" type="number" placeholder="Enter eid"></td>
+</tr>
+<tr>
+  <td><label >Employee Name</label></td>
+  <td><input [(ngModel)]="ename" class="form-control" type="text" placeholder="Enter ename"></td>
+</tr>
+<tr>
+  <td><label >Employee Salary</label></td>
+  <td><input [(ngModel)]="esalary" class="form-control" type="number" placeholder="Enter esalary"></td>
+</tr>
+<tr>
+  <td><label>Employee Gender </label></td>
+  <td><input [(ngModel)]="egender1" type="radio" value="male" name="rtbgender">Male<input [(ngModel)]="egender1" type="radio" value="female" name="rtbgender">Female</td>
+</tr>
+<tr>
+  <td><label>Employee Designation </label></td>
+  <td>
+    <select [(ngModel)]="edesignation1">
+      <option *ngFor="let item of edesignation">{{item}}</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td><label>Employee Status</label></td>
+  <td><input [(ngModel)]="estatus" type="radio" value="yes" name="rtbstatus">Yes<input [(ngModel)]="estatus" type="radio" value="no" name="rtbgender">No
+  </td>
+</tr>
+</table>
+<button (click)="onAdd()" class="btn btn-warning form-control">Add</button>
+</div>
+<div class="container">
+ <table class="table">
+  <thead>
+    <th>EID</th>
+    <th>ENAME</th>
+    <th>ESALARY</th>
+    <th>EGENDER</th>
+    <th>EDESIGNATION</th>
+    <th>ESTATUS</th>
+  </thead>
+  <tr *ngFor="let item of arr">
+    <td>{{item.e_id}}</td>
+    <td>{{item.e_name}}</td>
+    <td>{{item.e_salary}}</td>
+    <td>{{item.e_gender}}</td>
+    <td>{{item.e_designation}}</td>
+    <td>{{item.e_status}}</td>
+
+    <button (click)="onDelete(item)" class="btn btn-default">
+    <span class="glyphicon glyphicon-trash"></span>
+    </button>
+    <button (click)="onUpdate(item)" class="btn btn-default">
+    <span class="glyphicon glyphicon-pencil"></span>
+    </button>
+
+</tr>
+</table>
+</div>
+

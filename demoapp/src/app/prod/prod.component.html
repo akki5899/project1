@@ -1,0 +1,109 @@
+<div class="container">
+<div class="container">
+<table *ngIf="flag" class="table ">
+  <tr>
+    <td>P_ID</td>
+    <td><input class="form-control" [(ngModel)]="id1" type="number" placeholder="Product Id"></td>
+  </tr>
+<tr>
+  <td>P_NAME</td>
+  <td><input class="form-control" [(ngModel)]="name1" type="text" placeholder="Product Name"></td>
+</tr>
+<tr>
+  <td>P_PRICE</td>
+  <td><input class="form-control" [(ngModel)]="price1" placeholder="Product Price" type="number"></td>
+</tr>
+ <tr>
+  <td>P_IMEGE</td>
+  <td><input class="form-control" [(ngModel)]="pimg" type="text" placeholder="Product Img"></td>
+</tr>
+<tr>
+  <td>MFG</td>
+  <td><input class="form-control" placeholder="Product Mfg" [(ngModel)]="mfg1" type="text"></td>
+</tr>
+<tr>
+  <td>instock</td>
+  <td>
+    <input  [(ngModel)]="sell1" type="radio" name="r11" value="yes">Yes
+    <br>
+    <input   [(ngModel)]="sell1" type="radio" name="r11" value="No">NO
+  </td>
+</tr>
+<tr>
+
+  <td colspan=2><button class="btn btn-primary form-control" (click)="onadd()"> ADD</button></td>
+</tr>
+</table>
+</div>
+<br><br><br>
+
+<div class="row">
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+               <a class="navbar-brand" href="#">HRX</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">About us</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><button (click)="onadd1()" class="btn btn-info btn-lg " role="group" aria-label="..." role="button">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+</div>
+   <div class="row">
+    <div class="col-md-2">
+      <ul class="list-group">
+        <li class="list-group-item">
+          MRF
+          <span class="badge">10</span>
+        </li>
+        <li class="list-group-item">
+            RBK
+            <span class="badge">10</span>
+          </li>
+          <li class="list-group-item">
+              NIKE
+              <span class="badge">10</span>
+            </li>
+      </ul>
+     </div>
+     <div *ngFor="let item of arr" class="col">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+              <p>{{item.pid}}</p>
+            <img src="{{item.pimg}}" alt="...">
+            <div class="caption">
+              <h3>{{item.pname}}</h3>&nbsp;&nbsp;&nbsp;
+              <p>{{item.pprice}} &nbsp;&nbsp;&nbsp;
+                 {{item.mfg}}&nbsp;&nbsp;&nbsp;
+                 {{item.sell1}}</p>
+              <p><button (click)="onDelete(item)"  class="btn btn-primary" role="button">
+                <span class="glyphicon glyphicon-trash"></span>
+              </button>
+                <button (click)="onEdit(item)" class="btn btn-default" role="button">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+          </div>
+        </div>
+     </div>
+  </div>
+
+<div class="row">
+    <nav class="navbar navbar-inverse">
+    </nav>
+</div>
+
+
+</div>
